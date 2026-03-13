@@ -1,6 +1,7 @@
 import { createRoot } from "react-dom/client";
 import { RouterProvider, createRouter } from "@tanstack/react-router";
 import { routeTree } from "./routeTree.gen";
+import { Toaster } from "@/components/ui/sonner";
 
 import "./index.css";
 
@@ -12,5 +13,8 @@ declare module "@tanstack/react-router" {
 }
 
 createRoot(document.getElementById("root")!).render(
-  <RouterProvider router={router} />,
+  <>
+    <RouterProvider router={router} />
+    <Toaster />
+  </>,
 );
