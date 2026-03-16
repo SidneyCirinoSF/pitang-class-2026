@@ -13,6 +13,10 @@ function getCookie(cookieName: string) {
     ?.split("=")[1];
 }
 
+export function isAuthenticated() {
+  return !!getCookie("@pitang/accessToken");
+}
+
 export function useAuth() {
   const [loggedUser, setLoggedUser] = useState<LoggedUser | null>(null);
   const navigate = useNavigate();
